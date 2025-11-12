@@ -46,8 +46,13 @@ def son_todas_director_genero(peliculas: list[Pelicula], director: str, genero: 
     Devuelve:
     bool: True si todas las películas del director pertenecen al género, False en caso contrario.
     """
-    # TODO: Implementa esta función
-    pass
+    todos = True
+    for p in peliculas:
+        if p.director == director and genero not in p.genero:
+            todos = False
+            break
+    return todos
+
 
 def construye_lista_titulos_actor(peliculas: list[Pelicula], actor: str) -> list[str]:
     """
@@ -70,8 +75,11 @@ def calcula_presupuesto_total_año(peliculas: list[Pelicula], año: int) -> int:
     Devuelve:
     int: Presupuesto total de las películas estrenadas en el año indicado.
     """
-    # TODO: Implementa esta función
-    pass
+    suma = 0
+    for p in peliculas:
+        if p.fecha_estreno.year == año:
+            suma += p.presupuesto
+    return suma
 
 def encuentra_pelicula_mayor_recaudacion(peliculas: list[Pelicula], genero: str) -> Pelicula | None:
     """
@@ -82,8 +90,11 @@ def encuentra_pelicula_mayor_recaudacion(peliculas: list[Pelicula], genero: str)
     Devuelve:
     Pelicula | None: Película con mayor recaudación del género indicado, o None si no existe ninguna.
     """
-    # TODO: Implementa esta función
-    pass
+    mas_recaudacion = None
+    for p in peliculas:
+        if mas_recaudacion == None or p.recaudacion > mas_recaudacion:
+                mas_recaudacion = p
+    return mas_recaudacion
 
 
 
