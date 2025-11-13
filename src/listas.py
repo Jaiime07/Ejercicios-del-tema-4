@@ -9,8 +9,17 @@ def inserta_ordenado(lista_nombres: list[str], nombre: str) -> None:
     lista_nombres (list[str]): Lista de nombres ordenada por longitud.
     nombre (str): Nombre a insertar.
     """
-    # TODO: Implementa esta función
-    pass
+    for a, b in zip(lista_nombres, lista_nombres[1:]): 
+        if len(a) > len(b):
+            return lista_nombres
+        
+    
+    
+
+        
+        
+
+
 
 def busca_duplicados(lista: list) -> list:
     """
