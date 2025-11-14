@@ -26,6 +26,7 @@ def test_inserta_ordenado():
     inserta_ordenado(lista, "Luis")
     assert lista == ["Pedro", "Ana", "Sofía"]  # La lista no cambia
 
+
 def test_busca_duplicados():
     # Caso de prueba 1: Lista con duplicados
     lista = [1, 2, 3, 2, 4, 3, 5]
@@ -164,7 +165,7 @@ def test_ordena_bubble_sort():
 
 # Descomenta las llamadas de los tests que quieras ejecutar
 test_inserta_ordenado()
-#test_busca_duplicados()
+test_busca_duplicados()
 #test_genera_aleatorios()
 #test_intercala_listas()
 #test_mezcla_ordenadas()

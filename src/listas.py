@@ -9,15 +9,24 @@ def inserta_ordenado(lista_nombres: list[str], nombre: str) -> None:
     lista_nombres (list[str]): Lista de nombres ordenada por longitud.
     nombre (str): Nombre a insertar.
     """
+    if lista_nombres == []:
+            lista_nombres.append(nombre)
+            return lista_nombres
     for a, b in zip(lista_nombres, lista_nombres[1:]): 
         if len(a) > len(b):
             return lista_nombres
-        
+        elif len(a) <= len(nombre) <= len(b):
+            lista_nombres.insert(lista_nombres.index(b), nombre)
+            return lista_nombres
+        elif len(nombre) < len(a):
+            lista_nombres.insert(0,nombre)
+            return lista_nombres
+        elif len(nombre) > len(b):
+            lista_nombres.append(nombre)
+            return lista_nombres
+lista = ["Juan", "Pedro", "Sofía"]
     
-    
-
-        
-        
+  
 
 
 
@@ -31,10 +40,25 @@ def busca_duplicados(lista: list) -> list:
     Devuelve:
     list: Lista con los elementos duplicados.
     """
-    # TODO: Implementa esta función:
     # - usando count
+    '''duplicados = []
+    for n in lista:
+        cuenta = lista.count(n)
+        if cuenta > 1 and n not in duplicados:
+            
+            duplicados.append(n)
+    return duplicados
+    ''' 
     # - usando slicing y sin usar count
-    pass
+    duplicados = []
+    for i in lista:
+        if i in lista[lista.index(i)+1:] and i not in duplicados:
+            duplicados.append(i)
+    return duplicados
+lista = [1, 2, 3, 2, 4, 3, 5]
+print(busca_duplicados(lista))
+
+
 
 def genera_aleatorios(n: int, minimo: int, maximo: int) -> list[int]:
     """
@@ -49,8 +73,19 @@ def genera_aleatorios(n: int, minimo: int, maximo: int) -> list[int]:
     Devuelve:
     list[int]: Lista con n números enteros aleatorios.
     """
-    # TODO: Implementa esta función
-    pass
+    resultado = []
+    for i in range (n):
+        nuevo = random.randint(minimo,maximo)
+        resultado.append(nuevo)
+    for a,b in zip(resultado[:], resultado[1:]):
+        if a == b:
+            nuevo = random.randint(minimo,maximo)
+            resultado.remove(a)
+            resultado.insert(lista.index(a), nuevo)
+    return resultado
+
+
+
 
 def intercala_listas(lista1: list, lista2: list) -> list:
     """
