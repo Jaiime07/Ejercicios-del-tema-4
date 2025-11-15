@@ -72,24 +72,19 @@ def genera_aleatorios(n: int, minimo: int, maximo: int) -> list[int]:
     Devuelve:
     list[int]: Lista con n números enteros aleatorios.
     """
-    resultado = []
-    completado = False
-    while not completado:
-        for i in range (n):
-            nuevo = random.randint(minimo,maximo)
-            resultado.append(nuevo)
-            if len(resultado) > 1:
-                for a,b in zip(resultado[:], resultado[1:]):
-                    if a == b:
-                        nuevo = random.randint(minimo,maximo)
-                        resultado.remove(a)
-                        resultado.insert(resultado.index(a), nuevo)
-                        if len(resultado) == n:
-                            completado = True
-                        
-        return resultado
+    lista = []
+    for a in range(n):
+        lista.append(random.randint(minimo,maximo))
+    for i in range(len(lista)-1):
+        while i == :
+            lista.remove(i)
+            lista.insert(i, random.randint(minimo, maximo))
+    return lista
+         #mal   
 
-#mal
+
+
+
 
 
 def intercala_listas(lista1: list, lista2: list) -> list:
