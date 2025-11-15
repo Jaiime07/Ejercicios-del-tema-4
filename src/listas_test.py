@@ -165,8 +165,8 @@ def test_ordena_bubble_sort():
 
 # Descomenta las llamadas de los tests que quieras ejecutar
 test_inserta_ordenado()
-test_busca_duplicados()
-#test_genera_aleatorios()
+#test_busca_duplicados()
+test_genera_aleatorios()
 #test_intercala_listas()
 #test_mezcla_ordenadas()
 #test_ordena_bubble_sort()
