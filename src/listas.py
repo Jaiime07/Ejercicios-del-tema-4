@@ -72,15 +72,23 @@ def genera_aleatorios(n: int, minimo: int, maximo: int) -> list[int]:
     Devuelve:
     list[int]: Lista con n números enteros aleatorios.
     """
-    lista = []
-    for a in range(n):
-        lista.append(random.randint(minimo,maximo))
-    for i in range(len(lista)-1):
-        while i == :
-            lista.remove(i)
-            lista.insert(i, random.randint(minimo, maximo))
-    return lista
-         #mal   
+    res = []
+    while len(res) != n: #bucle hasta que llegemos a los n números
+        res.append(random.randint(minimo, maximo)) #añadimos número aleatorio
+        if len(res) > 1: #si hay más de 1 elemento en res, comprobamos
+            for a, b in zip(res, res[1:]): #recorremos los elementos consecutivos
+                if a == b: #si son iguales
+                    iguales = True
+                    while iguales:
+                        res.pop() #quito el último
+                        nuevo = random.randint(minimo, maximo)
+                        res.append(nuevo) #pongo otro aleatorio
+                        if a != nuevo:
+                            iguales = False
+    return res
+
+
+                    
 
 
 
@@ -98,8 +106,18 @@ def intercala_listas(lista1: list, lista2: list) -> list:
     Devuelve:
     list: Lista resultante de intercalar las dos listas.
     """
-    # TODO: Implementa esta función
-    pass
+    res = []
+    for i in range(min(len(lista1), len(lista2))):
+        res.append(lista1[i])
+        res.append(lista2[i])
+    if len(lista1) > len(lista2):
+        n = len(lista1) - len(lista2)
+        res.extend(lista1[-n:])
+    elif len(lista2) > len(lista1):
+        n = len(lista2) - len(lista1)
+        res.extend(lista2[-n:])
+    return res
+
 
 def mezcla_ordenadas(lista1: list, lista2: list) -> list:
     """
@@ -112,8 +130,28 @@ def mezcla_ordenadas(lista1: list, lista2: list) -> list:
     Devuelve:
     list: Lista resultante de mezclar las dos listas ordenadas.
     """
-    # TODO: Implementa esta función
-    pass
+
+    #res = []
+    #res.extend(lista1)
+    #res.extend(lista2)
+    #res.sort()
+    #return res        --> Solución óptima
+
+    res = []
+    for a,b in zip(lista1, lista2):
+        if a <= b:
+            res.append(a)
+            res.append(b)
+        elif b < a:
+            res.append(b)
+            res.append(a)
+    dif = abs(len(lista1)-len(lista2))
+    if len(lista1) > len(lista2):
+        res.extend(lista1[-dif:])
+    elif len(lista2) > len(lista1):
+        res.extend(lista2[-dif:])
+    return res
+
 
 def ordena_bubble_sort(lista: list) -> None:
     """
@@ -122,5 +160,15 @@ def ordena_bubble_sort(lista: list) -> None:
     Parámetros:
     lista (list[int]): Lista de números enteros a ordenar.
     """    
-# TODO: Implementa esta función
-    pass
+    cambios = 1
+    while cambios != 0:
+        cambios = 0
+        for a,b in zip(lista, lista[1:]):
+            if a > b:
+                pongo = lista.index(b) 
+                quito = lista.index(a)
+                lista.pop(quito)
+                lista.insert(pongo, a)
+                cambios += 1
+    return lista
+            

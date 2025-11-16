@@ -9,8 +9,15 @@ def suma_matrices(m1: list[list[int | float]], m2: list[list[int | float]]) -> l
     Devuelve:
     list[list[int | float]]: Matriz resultante de la suma.
     """
-    # TODO: Implementa esta función
-    pass
+    
+    if len(m1) != len(m2): #comprobar que tengan mismo nº de columnas
+        return 
+    
+
+        
+
+
+   
 
 def multiplica_matrices(m1: list[list[int | float]], m2: list[list[int | float]]) -> list[list[int | float]]:
     """
