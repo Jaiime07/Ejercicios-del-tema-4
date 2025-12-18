@@ -29,16 +29,6 @@ def suma_matrices(m1: list[list[int | float]], m2: list[list[int | float]]) -> l
 
 
 
-
-
-   
-    
-
-        
-
-
-   
-
 def multiplica_matrices(m1: list[list[int | float]], m2: list[list[int | float]]) -> list[list[int | float]]:
     """
     Multiplica dos matrices y devuelve el resultado.

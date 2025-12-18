@@ -33,8 +33,10 @@ def existe_pelicula(peliculas: list[Pelicula], cadena_en_titulo: str) -> bool:
     bool: True si existe al menos una película cuyo título contiene la cadena, False en caso
     contrario.
     """
-    # TODO: Implementa esta función
-    pass
+    for peli in peliculas:
+        if cadena_en_titulo in peli.titulo:
+            return True
+    return False
 
 def son_todas_director_genero(peliculas: list[Pelicula], director: str, genero: str) -> bool:
     """

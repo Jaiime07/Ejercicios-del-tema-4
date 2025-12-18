@@ -1,4 +1,4 @@
-from matrices import suma_matrices, multiplica_matrices
+from matrices2 import suma_matrices, multiplica_matrices
 
 def test_suma_matrices():
     # Caso de prueba 1: Suma de dos matrices 2x2

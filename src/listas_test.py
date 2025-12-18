@@ -1,4 +1,4 @@
-from listas import inserta_ordenado, busca_duplicados, genera_aleatorios, ordena_bubble_sort, intercala_listas, mezcla_ordenadas
+from listas2 import inserta_ordenado, busca_duplicados, genera_aleatorios, ordena_bubble_sort, intercala_listas, mezcla_ordenadas
 
 def test_inserta_ordenado():
     # Caso de prueba 1: Inserción en una lista vacía
@@ -25,7 +25,6 @@ def test_inserta_ordenado():
     lista = ["Pedro", "Ana", "Sofía"]
     inserta_ordenado(lista, "Luis")
     assert lista == ["Pedro", "Ana", "Sofía"]  # La lista no cambia
-
 
 def test_busca_duplicados():
     # Caso de prueba 1: Lista con duplicados
@@ -164,10 +163,10 @@ def test_ordena_bubble_sort():
     assert lista == resultado_esperado
 
 # Descomenta las llamadas de los tests que quieras ejecutar
-test_inserta_ordenado()
-test_busca_duplicados()
-test_genera_aleatorios()
-test_intercala_listas()
-test_mezcla_ordenadas()
+#test_inserta_ordenado()
+#test_busca_duplicados()
+#test_genera_aleatorios()
+#test_intercala_listas()
+#test_mezcla_ordenadas()
 test_ordena_bubble_sort()
 print("Todos los casos de prueba pasaron correctamente.")
